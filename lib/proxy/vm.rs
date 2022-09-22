@@ -30,8 +30,7 @@ impl Proxy {
                 self.allowed_from_vm_arp(arp_pkt)
             }
             EthernetProtocol::Ipv4 => {
-                let ipv4_pkt = Ipv4Packet::new_checked(frame.payload()).ok()?;
-                self.allowed_from_vm_ipv4(ipv4_pkt)
+                Some(())
             }
             _ => None,
         }
